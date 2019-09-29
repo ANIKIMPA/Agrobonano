@@ -1,0 +1,68 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body#site{
+    background-color:#dfdfdf !important;
+    font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+    color:#000000;
+    font-size:16px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.color-primary {
+    background-color: #4b6f00 !important;
+    color: #fff;
+}
+
+.color-secondary {
+    background-color: #7b9e36 !important;
+    color: #fff;
+}
+
+.color-third, .btn.color-secondary:hover, .btn.color-secondary:active, .btn.color-secondary:focus {
+    background-color: #accf65!important;
+    color: #fff;
+}
+
+.text-black {
+    color: #000000 !important;
+}
+
+.contain {
+    background: url("{% static 'images/backyard.jpg' %}") no-repeat center fixed; 
+    background-size: 100% 100%;
+    height: 90vh;
+}
+
+.minh-96 {
+    min-height: 96vh;
+}
+
+.text {
+    color: black;
+}
+
+.opacity {
+    opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+}
+
+.desc {
+    max-width: 500px;
+}
+
+.item:before{
+    display:block;
+    content:" ";
+    padding-top:15%;
+}
+
+.item:after{
+    display:block;
+    content:" ";
+    padding-top:15%;
+} 

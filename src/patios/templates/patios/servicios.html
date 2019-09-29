@@ -1,0 +1,35 @@
+{% extends 'patios\base.html' %}
+{% load static %}
+
+{% block title %}
+    Servicios
+{% endblock title %}
+
+{% block content %}
+
+<div class="container minh-96">
+        <h1 class="text-center mt-5">{{ pagina.titulo }}</h1>
+        <div class="mx-auto desc">
+            <p>{{ pagina.descripcion }}</p>
+        </div>
+        <div class="text-center p-1">
+            {% for servicio in servicios %}
+                <div class="card d-inline-block m-3" style="width: 18rem;">
+                    <img src="{{ servicio.imagen.url }}" class="card-img-top" width="290px" height="194.3px" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ servicio.nombre }}</h5>
+                        <p class="card-text">{{ servicio.horas }} hr</p>
+                        
+                        {% if servicio.precio %}
+                        <p class="card-text">${{ servicio.precio }}</p>
+                        {% else %}
+                        <p class="card-text"> - </p>
+                        {% endif %}
+                            
+                        <a href="#contacto" class="btn color-secondary">Seleccionar</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

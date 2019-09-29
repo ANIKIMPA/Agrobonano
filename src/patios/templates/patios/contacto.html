@@ -1,0 +1,59 @@
+{% load static %}
+
+<!-- Contactanos -->
+<footer class="color-primary text-center minh-96 py-5" id="contacto">
+    <div class="container">
+        <h1 class="pt-4">{{ pagina_contacto.titulo }}</h1>
+    
+        <div class="mx-auto desc">
+            <p>{{ pagina_contacto.descripcion }}</p>
+        </div>
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+                <h3 class="text-danger mb-3">{{ message }}</h3>
+            {% elif message.tags == 'success'%}
+                <h3 class="text-info mb-3">{{ message }}</h3>
+            {% endif %}
+        {% endfor %}
+
+        <ul id="form-messages"></ul>
+    
+        <div class="row mt-5">
+            <div class="col-md-7 d-flex align-items-center">
+                <img src="{{ imagenes_contacto.0.imagen.url }}" class="rounded" width="90%" alt="image">
+            </div>
+        
+            <div class="col-md-5">
+                <form id="clientesForm" action="." method="POST">
+                    {% csrf_token %}
+                    <p>
+                    {{ textos_contacto.0 }} <br>
+                    Tel: {{ textos_contacto.1 }}
+                    </p>
+                    <p>Escribeme a <a class="text-warning" href="https://wa.me/1{{ ws_num }}">whatsapp <i class="fab fa-whatsapp"></i></a><br> o deje un mensaje para contactarle.</p>
+                    
+                    {% for field in form %}
+                    <div class="form-group">
+                        {{ field }}
+                        <small class="text-secondary">{{ field.help_text|safe }}</small>
+                        <div class="text-danger">{{ field.errors }}</div>
+                    </div>    
+                    {% endfor %}
+                    <button type="submit" id="btn-submit" class="btn color-secondary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END Contactanos -->
+
+
+{% if anchor %}
+    <script>
+        window.location.hash = "{{anchor}}";
+    </script>
+{% endif %}
+    
+
+
+    

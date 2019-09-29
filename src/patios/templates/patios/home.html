@@ -1,0 +1,129 @@
+{% extends 'patios\base.html' %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock title %}
+    
+
+{% block content %}
+    <!-- Imagen principal con titulo -->
+    <div class="contain position-relative" style="background-image: url('{{ imagenes.0.imagen.url }}')">
+        <div class="position-absolute w-100" style="bottom: 0px;">
+            <div class="bg-light text-center py-4 opacity">
+                <label for="title"><h6 class="text">{{ textos.0 }}</h6></label>
+                <h1 id="title" class="text pb-4">{{ pagina.titulo }}</h1>
+            </div>
+        </div>
+    </div>
+    <!-- END Imagen principal con titulo -->
+
+    <!-- Servicios -->
+        <div class="container my-5">
+            <div class="text-center row">
+                <div class="col-4">
+                    <div class="my-3 p-3 bg-white">
+                        <img src="{% static 'images/lawnmower.svg' %}" width="85%" alt="service-image">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="my-3 p-3 bg-white">
+                        <img src="{% static 'images/growth.svg' %}" width="85%" alt="service-image">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="my-3 p-3 bg-white">
+                        <img src="{% static 'images/grass.svg' %}" width="85%" alt="service-image">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="my-3 p-3 bg-white">
+                        <img src="{% static 'images/trowel.svg' %}" width="85%" alt="service-image">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="my-3 p-3 bg-white">
+                        <img src="{% static 'images/rake.svg' %}" width="85%" alt="service-image">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="my-3 p-3 bg-white">
+                        <img src="{% static 'images/watering.svg' %}" width="85%" alt="service-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- END Servicios -->
+
+    <!-- Sobre mí -->
+    <div class="text-center mt-3 p-5" style="background-color: #bdbdbd;">
+        <h1>SOBRE NOSOTROS</h1>
+        <div class="mx-auto desc">
+            <p>{{ pagina.descripcion }}</p>
+            <a class="btn color-secondary" href="{% url 'patios:sobre-mi' %}">Saber más</a>
+        </div>
+    </div>
+    <!-- END Sobre mí -->
+
+    <!-- Cards -->
+    <div class="row container mx-auto my-5">
+        <div class="col-sm-4 my-2 align-items-stretch d-flex text-center">
+            <div class="card color-primary">
+                <div class="card-body flex-column d-flex">
+                    <div class="flex-fill">
+                        <h5 class="card-title">SERVICIOS</h5>
+                        <p class="card-text text-center">{{ textos.1 }}</p>
+                    </div>
+                    <div class="text-center mt-3"><a href="{% url 'patios:servicios' %}" class="btn color-secondary mx-center">Saber más</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 my-2 align-items-stretch d-flex text-center">
+            <div class="card color-primary">
+                <div class="card-body flex-column d-flex">
+                    <div class="flex-fill">
+                        <h5 class="card-title">GALERÍA</h5>
+                        <p class="card-text text-center">{{ textos.2 }}</p>
+                        
+                    </div>
+                    <div class="text-center mt-3"><a href="{% url 'patios:galeria' %}" class="btn color-secondary mx-center">Saber más</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 my-2 align-items-stretch d-flex text-center">
+            <div class="card color-primary">
+                <div class="card-body flex-column d-flex">
+                    <div class="flex-fill">
+                        <h5 class="card-title">TESTIMONIOS</h5>
+                        <p class="card-text">{{ textos.3 }}</p>
+                    </div>
+                    <div class="text-center mt-3"><a href="" class="btn color-secondary mx-center">Saber más</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Cards -->
+
+    <div class="row text-center">
+        <div class="col-md-4 p-5 item" style="background-color: #567c03;">
+            <img src="{% static 'images/reliability.svg' %}" width="30%" alt="image">
+            <div class="w-75 mx-auto mt-4">
+                <h3>Completamente Garantizado</h3>
+            </div>
+        </div>
+        <div class="col-md-4 color-secondary p-5 item text-black">
+            <img src="{% static 'images/star.svg' %}" width="30%" alt="image">
+            <div class="w-75 mx-auto mt-4">
+                <h3>Seguro y digno de confianza</h3>
+            </div>
+        </div>
+        <div class="col-md-4 color-third p-5 item text-black">
+            <img src="{% static 'images/document.svg' %}" width="30%" alt="image">
+            <div class="w-75 mx-auto mt-4">
+                <h3>Profesional y experimentado</h3>
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock content %}

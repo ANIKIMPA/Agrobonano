@@ -1,0 +1,48 @@
+{% load getattribute %}
+
+<div class="sticky-top">
+    <nav id="header" class="navbar navbar-expand-lg color-secondary">
+        <a class="navbar-brand" href="{% url 'accounts:index' %}">Site administration</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            {% if user.is_staff %}
+            <span class="nav-item nav-link active text-white ml-auto">Bienvenido, <strong>{{ user.username }}</strong>. <span class="sr-only">(current)</span></span>
+            <div class="navbar-nav ml-auto" id="user-tools">
+            <a class="nav-item nav-link" href="{% url 'patios:home' %}" target="_blank">Ver mi site</a>
+            <a class="nav-item nav-link" href="{% url 'accounts:change-password' %}">Cambiar Contraseña</a>
+            <a class="nav-item nav-link" href="{% url 'accounts:logout' %}">Cerrar sesión</a>
+            </div>
+            {% endif %}
+        </div>
+    </nav>
+    
+    <div class="color-primary" id="in_admin">
+        <div class="container-fluid py-2">
+            {% if paginas %}
+                <span class="actual">Home</span>
+            {% else %}
+                <a href="{% url 'accounts:index' %}">Home</a>
+            {% endif %}
+                
+            {% if items is not None %}
+               / <span class="actual">{{ items |to_model_name }}s</span>
+            {% elif pagina %}
+               / <span class="actual">{{ pagina.nombre }}</span>
+            {% elif form %}
+               / <a href="/miadmin/view/{{ form|to_model_name|lower }}s/">{{ form|to_model_name }}s</a>
+            {% endif %}
+    
+            {% if obj %}
+                {% if obj.username %}
+                    / <span class="actual">{{ obj.username }}</span>
+                {% else %}
+                    / <span class="actual">{{ obj.nombre }}</>
+                {% endif %}
+            {% elif title %}
+                / <span class="actual">{{ title }}</>
+            {% endif %}
+        </div>
+    </div>
+</div>

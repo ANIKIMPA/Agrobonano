@@ -1,0 +1,87 @@
+body#admin{
+    background-color:#f8f8f8 !important;
+    font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+    color:#000000;
+    font-size:16px;
+}
+
+.color-primary {
+    background-color: #546e7a !important;
+    color: #fff !important;
+}
+
+.color-secondary {
+    background-color: #29434e !important;
+    color: #fff !important;
+}
+
+a {
+    color: #ffffff !important;
+}
+a:hover {
+    color: #dadada !important;
+}
+
+span.actual {
+    color: #ffffff75 !important;
+}
+
+.btn.color-primary:hover, .btn.color-primary:active, .btn.color-primary:focus{
+    background-color: #29434e !important
+}
+
+.login #header {
+    width: auto;
+    display: flex;
+    align-items: center;
+    padding: 8px 40px;
+    overflow: hidden;
+    justify-content: center;
+    background-color: #546e7a !important;
+}
+
+.login {
+    height: 96vh;
+    position: relative;
+}
+
+.login #header a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.login .position-absolute {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.w-480px {
+    width: 480px;
+    z-index: 10px;
+}
+
+tbody tr {
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    cursor: pointer;
+    background-color: rgba(201, 229, 231, 0.726) !important;
+}
+
+#change-form a {
+    color: #707070 !important;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+#change-form a:hover {
+    color: #525252 !important;
+    font-weight: 100;
+    font-size: 14px;
+}

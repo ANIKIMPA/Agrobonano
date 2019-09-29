@@ -1,0 +1,87 @@
+{% extends 'accounts\base.html' %}
+
+{% block title %}
+    Admin change-form
+{% endblock title %}
+
+
+{% block header %}
+    {{ block.super }}
+{% endblock header %}
+    
+
+{% block content %}
+
+    <div class="container my-5">
+        <h3 class="m-5"> Página {{ pagina.nombre }}</h3>
+        <form action="{{ pagina.get_absolute_url }}" method="POST" onsubmit="selectAllImages()">
+            {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="form-label col-sm-2 my-3">{{ field.label_tag }}</div>
+                            <div class="text-danger">{{ field.errors }}</div>
+                            <div class="col-sm-6 my-3">
+                                {{ field }}
+                                {% if field.name == 'imagenes' %}
+                                <div class="d-flex justify-content-around">
+                                    <button type="button" class="btn btn-info my-2" data-toggle="modal" data-target="#imagenModal">Añadir</button>
+                                    <button type="button" class="btn btn-danger my-2" onclick="deleteImage()">Borrar</button>
+                                </div>
+                                {% endif %}
+                            </div>    
+                        </div>
+                    </div>
+                    <hr>
+                {% endfor %}
+
+                {% block extra_content %}{% endblock extra_content %}
+                    
+            <div class="text-right"><button class="btn btn-primary" type="submit">Guardar</button></div>
+        </form>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="imagenModal" tabindex="-1" role="dialog" aria-labelledby="imagenModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imagenModalLabel">Añadir Imagen</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+               <form id="image_form" action="{% url 'accounts:save-image' pagina.pk %}" method="POST" enctype="multipart/form-data">
+                   {% csrf_token %}
+                    {% for field in imgForm %}
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="form-label col-sm-4 my-3">{{ field.label_tag }}</div>
+                                <div class="text-danger">{{ field.errors }}</div>
+                                <div class="col-sm-8 my-3">{{ field }}</div>
+                            </div>
+                        </div>
+                        <hr>
+                    {% endfor %}
+               </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" form="image_form" class="btn btn-primary">Guardar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    function deleteImage() {
+        $("#id_imagenes option:selected").remove()
+    }
+    function selectAllImages() {
+        $("#id_imagenes option").prop("selected", true)
+    }
+</script>
+{% endblock scripts %}

@@ -1,0 +1,41 @@
+{% load getattribute %}
+
+<!-- Params: items, field_names, [col_headers]  -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8"><h3 class="my-5">Escoja {{ items |to_model_name }} a modificar</h3></div>
+        <div class="col-sm-4 text-right">
+            <a href="/miadmin/{{items|to_model_name|lower}}s/add-new">
+                <button type="button" class="btn btn-secondary rounded-pill my-5">Añadir {{ items |to_model_name }} <i class="fas fa-plus"></i></button>
+            </a>
+        </div>
+    </div>
+
+    <table class="table table-striped border">
+        <thead>
+            <tr class="color-primary">
+                {% if col_headers %}
+                    {% for field in col_headers %}
+                        <th class="w-25 text-center">{{ field|title }}</th>
+                    {% endfor %}
+                {% else %}
+                    {% for field in field_names %}
+                        <th class="w-25 text-center">{{ field|title }}</th>
+                    {% endfor %}
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr onclick="showDetail('{{ item.get_absolute_url }}')">
+                {% for field in field_names %}
+                    <td align="center">{{ item|getattribute:field }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="w-25 m-2 text-muted">{{ items.count }} {{ items|to_model_name }}{{ items.count|pluralize }}</div>
+    <hr>
+</div>

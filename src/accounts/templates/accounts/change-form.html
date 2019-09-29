@@ -1,0 +1,65 @@
+{% extends 'accounts/base.html' %}
+
+{% load getattribute %}
+
+{% block title %}
+    Admin site
+{% endblock title %}
+
+{% block content %}
+    <div class="container my-5" id="change-form">
+        <h3 class="m-5">
+            {% if title %}
+                {{ title }}
+            {% else %}
+                Modificar {{ form |to_model_name }}
+            {% endif %}
+        </h3>
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group row">
+                    <div class="form-label col-sm-2 my-3">{{ field.label_tag }}</div>
+                    <div class="col-sm-6 my-3">
+                        {{ field }}
+                        <small class="text-secondary">{{ field.help_text|safe }}</small>
+                    </div>
+                    <div class="text-danger">{{ field.errors }}</div>
+                </div>
+                <hr>
+            {% endfor %}
+            <div class="d-flex justify-content-between bg-white rounded">
+                {% if obj %}
+                    <a href="{{obj.get_delete_url}}"><button type="button" class="btn btn-danger m-3">Eliminar</button></a>
+                {% else %}
+                    <div></div>
+                {% endif %}
+                <button type="submit" class="btn btn-secondary m-3">Guardar</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    var reemplazarAcentos=function(cadena)
+    {
+        var chars={
+            "á":"a", "é":"e", "í":"i", "ó":"o", "ú":"u",
+            "à":"a", "è":"e", "ì":"i", "ò":"o", "ù":"u", "ñ":"n"
+            }
+        var expr=/[áàéèíìóòúùñ]/ig;
+        var res=cadena.replace(expr,function(e){return chars[e]});
+        return res;
+    }
+
+    var nombre = document.getElementById("id_nombre")
+    nombre.onkeyup = function() {
+        var slug = document.getElementById("id_slug");
+        var str = reemplazarAcentos(nombre.value.toLowerCase());
+        str = str.replace(/\W+/g, '-');
+        slug.value = str;
+    }
+</script>
+{% endblock scripts %}

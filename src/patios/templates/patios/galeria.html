@@ -1,0 +1,41 @@
+{% extends 'patios\base.html' %}
+{% load static %}
+
+{% block title %}
+    Galería
+{% endblock title %}
+
+{% block content %}
+    <!-- Page Content -->
+    <h1 class="text-center my-5">{{ pagina.titulo }}</h1>
+     <div class="container minh-96 text-center">
+         <div class="mx-auto desc">
+             <p>{{ pagina.descripcion }}</p>
+        </div>
+        <div class="row">
+            {% if imagenes %}
+                {% for img in imagenes %}
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="{{ img.imagen.url }}" class="fancybox" rel="ligthbox">
+                        <img  src="{{ img.imagen.url }}" class="zoom img-fluid "  alt="image">
+                    </a>
+                </div>  
+                {% endfor %}
+            {% else %}
+                {% for img in imgs %}
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="{{ img }}" class="fancybox" rel="ligthbox">
+                            <img  src="{{ img }}" class="zoom img-fluid "  alt="image">
+                        </a>
+                    </div>
+                {% endfor %}
+            {% endif %}
+       </div>
+    </div>
+{% endblock content %}
+
+
+{% block scripts %}
+    <script src="{% static 'js/gallery.js' %}"></script>
+{% endblock scripts %}
+    
