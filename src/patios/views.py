@@ -14,8 +14,7 @@ from .models import (
 
 # Create your views here.
 def home_page(request):
-    pagina_inicio = None
-    # pagina_inicio = get_object_or_404(Pagina, pk=2)
+    pagina_inicio = get_object_or_404(Pagina, pk=2)
     context = get_context(request, pagina_inicio)
     return send_email_or_render(request, "patios/home.html", context)
     

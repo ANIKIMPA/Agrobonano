@@ -1,0 +1,342 @@
+[
+{
+    "model": "accounts.usuario",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$ZPmtJKzKDtQT$j0BwYsga2Vq2a3iaPlgWuEcm65i2yIlR3srVPSgkA6M=",
+        "last_login": "2019-09-29T01:37:26.763Z",
+        "is_superuser": true,
+        "username": "niovan",
+        "first_name": "Niovan",
+        "last_name": "Martinez",
+        "email": "niovan.martinez9@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2019-09-13T17:23:21Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.usuario",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$cE21uh2uHJHj$TvXtXi5JQLdfNgTYIcTxcpuuRE2jtOvqC0eRHBy3dV8=",
+        "last_login": "2019-09-28T19:16:12.898Z",
+        "is_superuser": false,
+        "username": "manuel",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2019-09-28T15:55:00.707Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "patios.imagen",
+    "pk": 13,
+    "fields": {
+        "titulo": "manuel_bonano_logo",
+        "imagen": "patios/images/patios_manuel_logo.png",
+        "ocultar": false,
+        "created_at": "2019-09-25T18:07:00.678Z",
+        "pagina": 5
+    }
+},
+{
+    "model": "patios.imagen",
+    "pk": 14,
+    "fields": {
+        "titulo": "manuel_bonano",
+        "imagen": "patios/images/806630174_224323.jpg",
+        "ocultar": false,
+        "created_at": "2019-09-25T18:11:14.618Z",
+        "pagina": 3
+    }
+},
+{
+    "model": "patios.imagen",
+    "pk": 20,
+    "fields": {
+        "titulo": "montanas",
+        "imagen": "patios/images/rio_montanas_IIgUrjU.jpg",
+        "ocultar": false,
+        "created_at": "2019-09-28T18:49:12.694Z",
+        "pagina": 2
+    }
+},
+{
+    "model": "patios.pagina",
+    "pk": 1,
+    "fields": {
+        "nombre": "Servicios",
+        "slug": "servicios",
+        "titulo": "Servicios",
+        "descripcion": "",
+        "updated_at": "2019-09-25T16:33:46.404Z",
+        "created_at": "2019-09-17T13:29:27.420Z"
+    }
+},
+{
+    "model": "patios.pagina",
+    "pk": 2,
+    "fields": {
+        "nombre": "Inicio",
+        "slug": "inicio",
+        "titulo": "Servicios confiables",
+        "descripcion": "Nuestra empresa se especializa en el corte de grama y recogido, limpieza con manguera de presi\u00f3n. Tenemos claro que nuestra misi\u00f3n es darle vida a tu patio.",
+        "updated_at": "2019-09-28T19:50:54.670Z",
+        "created_at": "2019-09-17T13:58:50.968Z"
+    }
+},
+{
+    "model": "patios.pagina",
+    "pk": 3,
+    "fields": {
+        "nombre": "Sobre m\u00ed",
+        "slug": "sobre-mi",
+        "titulo": "Sobre m\u00ed",
+        "descripcion": "Hola soy Manuel Bonano y soy un tipo humilde, me encanta todo lo relacionado a la vegetaci\u00f3n, campos y patios.",
+        "updated_at": "2019-09-27T03:09:03.788Z",
+        "created_at": "2019-09-17T14:04:18.022Z"
+    }
+},
+{
+    "model": "patios.pagina",
+    "pk": 4,
+    "fields": {
+        "nombre": "Galer\u00eda",
+        "slug": "galeria",
+        "titulo": "Buenos patios",
+        "descripcion": "Estas son nuestras mejores imagenes de los patios de calidad.",
+        "updated_at": "2019-09-28T19:04:20.587Z",
+        "created_at": "2019-09-17T14:06:08.623Z"
+    }
+},
+{
+    "model": "patios.pagina",
+    "pk": 5,
+    "fields": {
+        "nombre": "Contacto",
+        "slug": "contacto",
+        "titulo": "CONT\u00c1CTANOS",
+        "descripcion": "Nos puedes escribir por mensaje de texto o whatsapp. Tambi\u00e9n aceptamos llamadas.",
+        "updated_at": "2019-09-29T01:42:29.159Z",
+        "created_at": "2019-09-17T14:09:55.720Z"
+    }
+},
+{
+    "model": "patios.texto",
+    "pk": 1,
+    "fields": {
+        "texto": "Cuidado del c\u00e9sped de calidad",
+        "posicion": 1,
+        "pagina": 2,
+        "updated_at": "2019-09-28T19:50:54.692Z",
+        "created_at": "2019-09-19T13:37:43.000Z"
+    }
+},
+{
+    "model": "patios.texto",
+    "pk": 2,
+    "fields": {
+        "texto": "Nuestra empresa se especializa en el corte de grama y recogido, limpieza con manguera de presi\u00f3n. Tenemos claro que nuestra misi\u00f3n es darle vida a tu patio.",
+        "posicion": 2,
+        "pagina": 2,
+        "updated_at": "2019-09-28T19:50:54.697Z",
+        "created_at": "2019-09-19T13:45:34.015Z"
+    }
+},
+{
+    "model": "patios.texto",
+    "pk": 3,
+    "fields": {
+        "texto": "Texto debajo de la galeria, lo puedes cambiar en cualquier momento.",
+        "posicion": 3,
+        "pagina": 2,
+        "updated_at": "2019-09-28T19:50:54.702Z",
+        "created_at": "2019-09-19T13:45:51.830Z"
+    }
+},
+{
+    "model": "patios.texto",
+    "pk": 4,
+    "fields": {
+        "texto": "Nuestra empresa se especializa en el corte de grama y recogido, limpieza con manguera de presi\u00f3n. Tenemos claro que nuestra misi\u00f3n es darle vida a tu patio.",
+        "posicion": 4,
+        "pagina": 2,
+        "updated_at": "2019-09-28T19:50:54.706Z",
+        "created_at": "2019-09-19T13:46:15.084Z"
+    }
+},
+{
+    "model": "patios.texto",
+    "pk": 5,
+    "fields": {
+        "texto": "Manuel Bonano",
+        "posicion": 1,
+        "pagina": 3,
+        "updated_at": "2019-09-27T03:09:03.813Z",
+        "created_at": "2019-09-19T13:46:59.906Z"
+    }
+},
+{
+    "model": "patios.texto",
+    "pk": 6,
+    "fields": {
+        "texto": "Joven emprendedor y jardinero.",
+        "posicion": 2,
+        "pagina": 3,
+        "updated_at": "2019-09-27T03:09:03.817Z",
+        "created_at": "2019-09-19T13:47:27.376Z"
+    }
+},
+{
+    "model": "patios.texto",
+    "pk": 7,
+    "fields": {
+        "texto": "Last updated 3 mins ago",
+        "posicion": 3,
+        "pagina": 3,
+        "updated_at": "2019-09-27T03:09:03.822Z",
+        "created_at": "2019-09-19T13:47:50.832Z"
+    }
+},
+{
+    "model": "patios.texto",
+    "pk": 8,
+    "fields": {
+        "texto": "charliebonano@gmail.com",
+        "posicion": 1,
+        "pagina": 5,
+        "updated_at": "2019-09-29T01:42:29.183Z",
+        "created_at": "2019-09-19T13:48:36.703Z"
+    }
+},
+{
+    "model": "patios.texto",
+    "pk": 9,
+    "fields": {
+        "texto": "787-628-3683",
+        "posicion": 2,
+        "pagina": 5,
+        "updated_at": "2019-09-29T01:42:29.188Z",
+        "created_at": "2019-09-19T13:48:52.069Z"
+    }
+},
+{
+    "model": "patios.texto",
+    "pk": 10,
+    "fields": {
+        "texto": "P\u00e1rrafo. Haz clic aqu\u00ed para agregar tu propio texto y editar. Es f\u00e1cil. Haz clic en Editar Texto o doble clic aqu\u00ed para agregar tu contenido y cambiar la fuente.",
+        "posicion": 4,
+        "pagina": 3,
+        "updated_at": "2019-09-27T03:09:03.825Z",
+        "created_at": "2019-09-27T02:59:27.300Z"
+    }
+},
+{
+    "model": "patios.servicio",
+    "pk": 1,
+    "fields": {
+        "nombre": "Cuidado del c\u00e9sped",
+        "slug": "cuidado-del-cesped",
+        "imagen": "patios/servicios/mowing-1024x762.jpg",
+        "horas": "1",
+        "precio": null,
+        "descripcion": "El cuidado de cesped consiste en pasar una maquina para cortar la grama.",
+        "ocultar": false,
+        "created_at": "2019-09-17T13:18:59.450Z",
+        "updated_at": "2019-09-28T19:39:16.540Z"
+    }
+},
+{
+    "model": "patios.servicio",
+    "pk": 2,
+    "fields": {
+        "nombre": "Cortar Grama",
+        "slug": "cortar-grama",
+        "imagen": "patios/servicios/weed_wacking_x8v2n0m.jpg",
+        "horas": "1",
+        "precio": null,
+        "descripcion": "Se pasa un trimer por tu patio o jard\u00edn.",
+        "ocultar": false,
+        "created_at": "2019-09-17T13:21:17.831Z",
+        "updated_at": "2019-09-28T19:48:37.865Z"
+    }
+},
+{
+    "model": "patios.servicio",
+    "pk": 3,
+    "fields": {
+        "nombre": "Dise\u00f1ar jardines",
+        "slug": "disenar-jardines",
+        "imagen": "patios/servicios/lanscaping.jpg",
+        "horas": "2",
+        "precio": "900.00",
+        "descripcion": "Te preparamos tu patio como gustes.",
+        "ocultar": false,
+        "created_at": "2019-09-17T13:22:19.101Z",
+        "updated_at": "2019-09-28T19:00:22.390Z"
+    }
+},
+{
+    "model": "patios.servicio",
+    "pk": 4,
+    "fields": {
+        "nombre": "Limpieza de jard\u00edn",
+        "slug": "limpieza-de-jardin",
+        "imagen": "patios/servicios/garden_clearance.jpg",
+        "horas": "1",
+        "precio": "35.00",
+        "descripcion": "Tu jard\u00edn quedar\u00e1 espectacular.",
+        "ocultar": false,
+        "created_at": "2019-09-17T13:23:09.819Z",
+        "updated_at": "2019-09-17T19:16:50.152Z"
+    }
+},
+{
+    "model": "patios.servicio",
+    "pk": 6,
+    "fields": {
+        "nombre": "Regado de plantas",
+        "slug": "regado-de-plantas",
+        "imagen": "patios/servicios/watering.jpg",
+        "horas": "1",
+        "precio": "20.00",
+        "descripcion": "Nustra agua con el mejor abono.",
+        "ocultar": false,
+        "created_at": "2019-09-17T13:25:32.485Z",
+        "updated_at": "2019-09-17T19:16:57.341Z"
+    }
+},
+{
+    "model": "patios.servicio",
+    "pk": 9,
+    "fields": {
+        "nombre": "Instalaci\u00f3n de hierba",
+        "slug": "instalacion-de-hierba",
+        "imagen": "patios/servicios/grass_installation_M03hnAu.jpg",
+        "horas": "3",
+        "precio": "0.00",
+        "descripcion": "",
+        "ocultar": false,
+        "created_at": "2019-09-28T19:49:29.576Z",
+        "updated_at": "2019-09-28T19:49:29.576Z"
+    }
+},
+{
+    "model": "patios.cliente",
+    "pk": 39,
+    "fields": {
+        "nombre": "Niovan",
+        "email": "niovan.martinez9@gmail.com",
+        "telefono": "787-218-8680",
+        "mensaje": "Necesito que me coretes el pasto.",
+        "fecha_solicitud": "2019-09-28T18:29:43.963Z"
+    }
+}
+]
