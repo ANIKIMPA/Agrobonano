@@ -28,7 +28,7 @@ def index_page(request):
     context = {
         "paginas": paginas,
     }
-    return render(request, "accounts\index.html", context)
+    return render(request, "accounts/index.html", context)
 
 def login_page(request):
     if request.user.is_staff:
