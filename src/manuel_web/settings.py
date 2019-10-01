@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1q%zz*1==q9f8qizynbncke8mci*&vw07024f5qzz1iyee8_2c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['104.248.12.122']
 
@@ -165,15 +165,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/') # live cdn AWS S3
 
 LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn')
 
-STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static') # live cdn AWS S3
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static_cdn')
+    os.path.join(BASE_DIR, 'staticFILES')
 ]
 
-MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media')
+MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media/')
 MEDIA_URL = '/media/'
 
 
