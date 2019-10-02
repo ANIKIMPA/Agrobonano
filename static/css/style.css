@@ -33,7 +33,9 @@ h1 {
 }
 
 .contain {
-    background-image: url('') no-repeat center fixed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     background-size: 100% 100%;
     min-height: 96vh;
 }
