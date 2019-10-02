@@ -33,7 +33,6 @@ h1 {
 }
 
 .contain {
-    background-image: url('{{ imagenes.0.imagen.url }}') no-repeat center fixed;
     background-size: 100% 100%;
     min-height: 96vh;
 }
