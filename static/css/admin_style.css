@@ -61,7 +61,8 @@ span.actual {
 }
 
 .w-480px {
-    width: 480px;
+    width: 50%;
+    max-width: 480px;
     z-index: 10px;
 }
 

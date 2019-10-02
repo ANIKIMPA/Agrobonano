@@ -8,7 +8,7 @@ Home
 
 {% block content %}
     <!-- Imagen principal con titulo -->
-    <div class="contain position-relative" style="background-image: url('{{ imagenes.0.imagen.url }}')">
+    <div class="contain position-relative" style="background-image: url('{{ imagenes.0.imagen.url }}') no-repeat center fixed;">
         <div class="position-absolute w-100" style="bottom: 0px;">
             <div class="bg-light text-center py-4 opacity">
                 <label for="title"><h6 class="text">{{ textos.0 }}</h6></label>
@@ -67,7 +67,7 @@ Home
 
     <!-- Cards -->
     <div class="row container mx-auto my-5">
-        <div class="col-sm-4 my-2 align-items-stretch d-flex text-center">
+        <div class="col-md-4 my-2 align-items-stretch d-flex text-center">
             <div class="card color-primary">
                 <div class="card-body flex-column d-flex">
                     <div class="flex-fill">
@@ -78,7 +78,7 @@ Home
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 my-2 align-items-stretch d-flex text-center">
+        <div class="col-md-4 my-2 align-items-stretch d-flex text-center">
             <div class="card color-primary">
                 <div class="card-body flex-column d-flex">
                     <div class="flex-fill">
@@ -90,7 +90,7 @@ Home
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 my-2 align-items-stretch d-flex text-center">
+        <div class="col-md-4 my-2 align-items-stretch d-flex text-center">
             <div class="card color-primary">
                 <div class="card-body flex-column d-flex">
                     <div class="flex-fill">
