@@ -58,13 +58,11 @@ h1 {
 }
 
 .item:before{
-    display:block;
     content:" ";
     padding-top:15%;
 }
 
 .item:after{
-    display:block;
     content:" ";
     padding-top:15%;
 } 
