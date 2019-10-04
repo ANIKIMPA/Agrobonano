@@ -176,9 +176,15 @@ MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media')
 MEDIA_URL = '/media/'
 
 
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'charliebonano@gmail.com'
+# EMAIL_HOST_PASSWORD = '********'
+# DEFAULT_TO_EMAIL = 'to email'
+
 EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_PORT = '2525'
 EMAIL_HOST_USER = 'b4a2c65fbc0669'
 EMAIL_HOST_PASSWORD = '245e065f8eba19'
-EMAIL_USE_TLS = True
+EMAIL_PORT = '2525'
 EMAIL_USE_SSL = False

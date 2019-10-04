@@ -1,8 +1,14 @@
+#python first
+#django second
+#my apps
+#local directory
+
+import re
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
-import re
+from django.conf import settings
 from .forms import ClientesForm
 from .models import (
     Servicio,
@@ -88,7 +94,7 @@ def send_email_or_render(request, template_name, context):
         form = ClientesForm(request.POST)
         if form.is_valid():
             nombre = request.POST.get('nombre')
-            from_email = request.POST.get('email')
+            email = request.POST.get('email')
             message = request.POST.get('mensaje')
 
             # Convertir telefono a formato ###-###-####
@@ -98,17 +104,13 @@ def send_email_or_render(request, template_name, context):
             telefono = telefono.replace("-", "")
             telefono = telefono[:3] + "-" + telefono[3:6] + "-" + telefono[6:]
 
-            try:
-                send_mail(
-                        f'Mensaje de {nombre}',
-                        f'Telefono: {telefono}\n\n{message}',
-                        from_email,
-                        ['niovan.martinez9@gmail.com'],
-                        fail_silently=False
-                    )
-                cliente = Cliente.objects.create(nombre=nombre, email=from_email, telefono=telefono, mensaje=message)
-            except BadHeaderError:
-                messages.error(request, "Hubo un error")
+            subject = f'Agro Bonano - Mensaje de {nombre}'
+            message = f'Telefono: {telefono}\n\n{message}'
+            from_email = settings.EMAIL_HOST_USER
+            to_list = [settings.EMAIL_HOST_USER, 'niovan.martinez7@gmail.com']
+
+            cliente = Cliente.objects.create(nombre=nombre, email=email, telefono=telefono, mensaje=message)
+            send_mail(subject, message, from_email, to_list)
             
             return redirect("patios:home")
         else:
