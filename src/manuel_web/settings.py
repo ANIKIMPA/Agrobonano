@@ -84,48 +84,48 @@ WSGI_APPLICATION = 'manuel_web.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# if DEBUG:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE' : 'django.db.backends.mysql',
-#             'USER' : 'root',
-#             'PASSWORD':'2015065',
-#             'NAME' : 'manuel_web',
-#             'HOST':'localhost',
-#             'PORT' : '3306',
-#             'OPTIONS': {
-#                 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-#                 # Tell MySQLdb to connect with 'utf8mb4' character set
-#                 'charset': 'utf8mb4',
-#             },
-#             # Tell Django to build the test database with the 'utf8mb4' character set
-#             'TEST': {
-#                 'CHARSET': 'utf8mb4',
-#                 'COLLATION': 'utf8mb4_unicode_ci',
-#             }
-#         }
-#     }
-# else:
-DATABASES = {
-    'default': {
-        'ENGINE' : 'django.db.backends.mysql',
-        'USER' : 'niovan',
-        'PASSWORD':'2015065',
-        'NAME' : 'manuel_web',
-        'HOST':'localhost',
-        'PORT' : '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            # Tell MySQLdb to connect with 'utf8mb4' character set
-            'charset': 'utf8mb4',
-        },
-        # Tell Django to build the test database with the 'utf8mb4' character set
-        'TEST': {
-            'CHARSET': 'utf8mb4',
-            'COLLATION': 'utf8mb4_unicode_ci',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE' : 'django.db.backends.mysql',
+            'USER' : 'root',
+            'PASSWORD':'2015065',
+            'NAME' : 'manuel_web',
+            'HOST':'localhost',
+            'PORT' : '3306',
+            'OPTIONS': {
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+                # Tell MySQLdb to connect with 'utf8mb4' character set
+                'charset': 'utf8mb4',
+            },
+            # Tell Django to build the test database with the 'utf8mb4' character set
+            'TEST': {
+                'CHARSET': 'utf8mb4',
+                'COLLATION': 'utf8mb4_unicode_ci',
+            }
         }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE' : 'django.db.backends.mysql',
+            'USER' : 'niovan',
+            'PASSWORD':'2015065',
+            'NAME' : 'manuel_web',
+            'HOST':'localhost',
+            'PORT' : '3306',
+            'OPTIONS': {
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+                # Tell MySQLdb to connect with 'utf8mb4' character set
+                'charset': 'utf8mb4',
+            },
+            # Tell Django to build the test database with the 'utf8mb4' character set
+            'TEST': {
+                'CHARSET': 'utf8mb4',
+                'COLLATION': 'utf8mb4_unicode_ci',
+            }
+        }
+    }
 
 
 # Password validation
@@ -172,7 +172,6 @@ STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static') # live cdn AWS S3
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles')
 ]
-
 MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media')
 MEDIA_URL = '/media/'
 

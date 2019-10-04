@@ -32,12 +32,15 @@ h1 {
     color: #000000 !important;
 }
 
+.container-full {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
 .contain {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    background: url("{% static 'images/backyard.jpg' %}") no-repeat center fixed; 
     background-size: 100% 100%;
-    min-height: 96vh;
+    height: 90vh;
 }
 
 .minh-96 {
@@ -67,4 +70,4 @@ h1 {
     display:block;
     content:" ";
     padding-top:15%;
-} 
+}
