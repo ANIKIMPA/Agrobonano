@@ -7,7 +7,7 @@ import re
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import send_mass_mail
 from django.conf import settings
 from .forms import ClientesForm
 from .models import (
@@ -104,14 +104,22 @@ def send_email_or_render(request, template_name, context):
             telefono = telefono.replace("-", "")
             telefono = telefono[:3] + "-" + telefono[3:6] + "-" + telefono[6:]
 
-            subject = f'Agro Bonano - Mensaje de {nombre}'
-            message = f'Telefono: {telefono}\n\n{message}'
-            from_email = settings.EMAIL_HOST_USER
-            to_list = [settings.EMAIL_HOST_USER, 'niovan.martinez7@gmail.com']
-
+            admin_message = (
+                'Nuevo Cliente/Agro Bonano',
+                f'De: {nombre}\nEmail: {email}\nTelefono: {telefono}\n\n{message}',
+                settings.EMAIL_HOST_USER,
+                [settings.EMAIL_HOST_USER, 'niovan.martinez9@gmail.com']
+            )
+            client_message = (
+                'Gracias por escribirnos',
+                '''Hemos recibido su mensaje, le contactaremos en cuanto podamos.
+                \nPara nosotros es sumamente importante brindarle un servicio de calidad.
+                \nAtentamene: Agro Bonano''',
+                settings.EMAIL_HOST_USER,
+                [email]
+            )
+            send_mass_mail((admin_message, client_message), fail_silently=True)
             cliente = Cliente.objects.create(nombre=nombre, email=email, telefono=telefono, mensaje=message)
-            send_mail(subject, message, from_email, to_list)
-            
             return redirect("patios:home")
         else:
             messages.error(request, "Arregle los siguientes errores:")

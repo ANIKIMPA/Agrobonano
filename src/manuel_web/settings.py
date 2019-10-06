@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1q%zz*1==q9f8qizynbncke8mci*&vw07024f5qzz1iyee8_2c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['104.248.12.122', 'agrobonano.com']
+ALLOWED_HOSTS = ['104.248.12.122', 'agrobonano.com', 'localhost', '127.0.0.1']
 
 LOGIN_URL = 'accounts:login'
 
@@ -166,25 +166,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn')
-
-STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static') # live cdn AWS S3
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static') # live cdn AWS S3
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles')
 ]
-MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media')
+
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
 MEDIA_URL = '/media/'
 
-
-# EMAIL_USE_TLS = True
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'charliebonano@gmail.com'
-# EMAIL_HOST_PASSWORD = '********'
-# DEFAULT_TO_EMAIL = 'to email'
-
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = 'b4a2c65fbc0669'
-EMAIL_HOST_PASSWORD = '245e065f8eba19'
-EMAIL_PORT = '2525'
-EMAIL_USE_SSL = False
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'charliebonano@gmail.com'
+EMAIL_HOST_PASSWORD = 'enrike911'
