@@ -4,6 +4,9 @@
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
+        <meta name="description" content="Limpieza de patios">
+        <meta name="keywords" content="patio,jardin,cortar,grama">
+        <meta name="author" content="Manuel Bonano">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
         <!-- Bootstrap CSS -->
@@ -16,7 +19,9 @@
         <title>{% block title %}Agro Bonano{% endblock title %}</title>
     </head>
   <body id="site">
-    {% include 'patios/navbar.html' %}
+    <header>
+      {% include 'patios/navbar.html' %}
+    </header>
     
     {% block content %}{% endblock content %}
 
