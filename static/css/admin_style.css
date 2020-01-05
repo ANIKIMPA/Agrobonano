@@ -62,9 +62,15 @@ span.actual {
 
 .w-480px {
     width: 86%;
-    max-width: 480px;
     z-index: 10px;
 }
+
+@media (min-width: 500px) {
+    .w-480px {
+        max-width: 480px;
+        z-index: 10px;
+    }
+  }
 
 tbody tr {
     cursor: pointer;

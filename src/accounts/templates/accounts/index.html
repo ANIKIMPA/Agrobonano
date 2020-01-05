@@ -7,40 +7,38 @@
   
   
 {% block content %}
-  <div class="container">
-    <h2 class="my-5">Mi sitio de administración</h2>
+  <h2 class="my-3">Agro Bonano</h2>
 
-    <table class="table">
+  <table class="table">
+    <thead class="color-primary">
+      <tr>
+        <th scope="col">Cuentas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td onclick='goToLink("{% url 'accounts:lista-usuarios' %}")'>Usuarios</td>
+      </tr>
+      <tr>
+        <td onclick='goToLink("{% url 'accounts:clientes' %}")'>Clientes</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table my-5">
       <thead class="color-primary">
         <tr>
-          <th scope="col">Cuentas</th>
+          <th scope="col">Paginas del Site</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td onclick='goToLink("{% url 'accounts:lista-usuarios' %}")'>Usuarios</td>
-        </tr>
-        <tr>
-          <td onclick='goToLink("{% url 'accounts:clientes' %}")'>Clientes</td>
-        </tr>
+        
+        {% for pagina in paginas %}
+          <tr>
+            <td onclick="goToLink('{{ pagina.get_absolute_url }}')">{{ pagina }}</td>
+          </tr>
+        {% endfor %}
       </tbody>
     </table>
-    <table class="table my-5">
-        <thead class="color-primary">
-          <tr>
-            <th scope="col">Paginas del Site</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-          {% for pagina in paginas %}
-            <tr>
-              <td onclick="goToLink('{{ pagina.get_absolute_url }}')">{{ pagina }}</td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-  </div>
 {% endblock %}
 
 

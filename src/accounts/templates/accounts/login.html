@@ -3,17 +3,17 @@
 {% block title %}Site admin{% endblock title %}
     
     {% block body %}        
-    <div class="login container position-relative">
+    <div class="login container w-480px position-relative">
         <div class="bg-white w-480px mx-auto position-absolute rounded border">
             <div id="header" class="color-primary rounded-top">{% block header %} {{ block.super }} {% endblock header %}</div>
             {% block content %}
             <form class="mt-2 mx-5" method="POST" action=".">
                 {% csrf_token %}
-                <div class="form-group">
+                <div class="form-group input">
                     {{ form.username.label_tag }}
                     {{ form.username }}
                 </div>
-                <div class="form-group">
+                <div class="form-group input">
                     {{ form.password.label_tag }}
                     {{ form.password }}
                 </div>
@@ -22,7 +22,7 @@
                     <p>{{ message }}</p>
                 {% endfor %}
                     
-                <div class="text-center m-3"><button type="submit" class="btn color-primary">Login</button></div>
+                <div class="text-center m-3 input"><button type="submit" class="btn color-primary">Login</button></div>
             </form>
             {% endblock content %}
         </div>
