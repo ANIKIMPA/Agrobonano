@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1q%zz*1==q9f8qizynbncke8mci*&vw07024f5qzz1iyee8_2c'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -89,7 +89,7 @@ if DEBUG:
         'default': {
             'ENGINE' : 'django.db.backends.mysql',
             'USER' : 'root',
-            'PASSWORD':'2015065',
+            'PASSWORD': os.environ.get('DB_PASS'),
             'NAME' : 'manuel_web',
             'HOST':'localhost',
             'PORT' : '3306',
@@ -110,7 +110,7 @@ else:
         'default': {
             'ENGINE' : 'django.db.backends.mysql',
             'USER' : 'niovan',
-            'PASSWORD':'2015065',
+            'PASSWORD': os.environ.get('DB_PASS'),
             'NAME' : 'manuel_web',
             'HOST':'localhost',
             'PORT' : '3306',
@@ -179,4 +179,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'charliebonano@gmail.com'
-EMAIL_HOST_PASSWORD = 'enrike911'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
